@@ -3,7 +3,7 @@ package io.sjm.automata;
 import java.util.HashSet;
 import java.util.Optional;
 
-public class DFARuleBook<T> extends HashSet<FARule<T>> {
+public class DFARulebook<T> extends HashSet<FARule<T>> {
   private static final long serialVersionUID = 1906157322432380283L;
 
   public T nextState(T state, Character c) {
