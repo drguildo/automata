@@ -5,9 +5,9 @@ import java.util.List;
 public class DFA<T> {
   private T currentState;
   private List<T> acceptStates;
-  private DFARuleBook<T> rulebook;
+  private DFARulebook<T> rulebook;
 
-  public DFA(T currentState, List<T> acceptStates, DFARuleBook<T> rulebook) {
+  public DFA(T currentState, List<T> acceptStates, DFARulebook<T> rulebook) {
     this.currentState = currentState;
     this.acceptStates = acceptStates;
     this.rulebook = rulebook;
