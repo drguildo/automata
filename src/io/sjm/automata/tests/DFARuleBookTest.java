@@ -1,17 +1,17 @@
 package io.sjm.automata.tests;
 
 import static org.junit.Assert.*;
-import io.sjm.automata.DFARuleBook;
+import io.sjm.automata.DFARulebook;
 
 import org.junit.Before;
 import org.junit.Test;
 
 public class DFARuleBookTest {
-  private DFARuleBook<Integer> rulebook;
+  private DFARulebook<Integer> rulebook;
 
   @Before
   public void setUp() throws Exception {
-    rulebook = new DFARuleBook<>();
+    rulebook = new DFARulebook<>();
     rulebook.addRule(1, 'a', 2);
     rulebook.addRule(1, 'b', 1);
     rulebook.addRule(2, 'a', 2);

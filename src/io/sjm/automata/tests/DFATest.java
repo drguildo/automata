@@ -2,7 +2,7 @@ package io.sjm.automata.tests;
 
 import static org.junit.Assert.*;
 import io.sjm.automata.DFA;
-import io.sjm.automata.DFARuleBook;
+import io.sjm.automata.DFARulebook;
 
 import java.util.Arrays;
 
@@ -10,12 +10,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class DFATest {
-  DFARuleBook<Integer> rulebook;
+  DFARulebook<Integer> rulebook;
   DFA<Integer> dfa;
 
   @Before
   public void setUp() throws Exception {
-    rulebook = new DFARuleBook<>();
+    rulebook = new DFARulebook<>();
     rulebook.addRule(1, 'a', 2);
     rulebook.addRule(1, 'b', 1);
     rulebook.addRule(2, 'a', 2);
