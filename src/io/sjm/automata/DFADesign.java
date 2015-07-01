@@ -7,10 +7,10 @@ public class DFADesign<T> {
   final private List<T> acceptStates;
   final private DFARulebook<T> rulebook;
 
-  public DFADesign(T currentState, List<T> acceptStates, DFARulebook<T> rulebook) {
-    this.currentState = currentState;
-    this.acceptStates = acceptStates;
-    this.rulebook = rulebook;
+  public DFADesign(T cs, List<T> as, DFARulebook<T> rb) {
+    currentState = cs;
+    acceptStates = as;
+    rulebook = rb;
   }
 
   public DFA<T> toDFA() {
