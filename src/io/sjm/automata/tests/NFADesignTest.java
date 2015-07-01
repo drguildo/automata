@@ -1,14 +1,12 @@
 package io.sjm.automata.tests;
 
 import static io.sjm.stdlib.datastructures.Sets.buildSet;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import io.sjm.automata.DFADesign;
-import io.sjm.automata.DFARulebook;
-import io.sjm.automata.NFA;
 import io.sjm.automata.NFADesign;
 import io.sjm.automata.NFARuleBook;
 
