@@ -34,4 +34,22 @@ public class NFADesignTest {
     assertTrue(design.accepts("bbbbb"));
     assertFalse(design.accepts("bbabb"));
   }
+
+  @Test
+  public void testFreeMoves() {
+    NFARuleBook<Integer> fmrb = new NFARuleBook<>();
+    fmrb.addRule(1, null, 2);
+    fmrb.addRule(1, null, 4);
+    fmrb.addRule(2, 'a', 3);
+    fmrb.addRule(3, 'a', 2);
+    fmrb.addRule(4, 'a', 5);
+    fmrb.addRule(5, 'a', 6);
+    fmrb.addRule(6, 'a', 4);
+
+    design = new NFADesign<>(buildSet(1), buildSet(2, 4), fmrb);
+    assertTrue(design.accepts("aa"));
+    assertTrue(design.accepts("aaa"));
+    assertFalse(design.accepts("aaaaa"));
+    assertTrue(design.accepts("aaaaaa"));
+  }
 }

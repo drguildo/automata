@@ -1,6 +1,8 @@
 package io.sjm.automata.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -10,7 +12,9 @@ import org.junit.Test;
 
 import io.sjm.automata.FARule;
 import io.sjm.automata.NFARuleBook;
+import io.sjm.stdlib.datastructures.Sets;
 
+@SuppressWarnings("static-method")
 public class NFARuleBookTest {
   private NFARuleBook<Integer> rb = new NFARuleBook<>();
   private FARule<Integer> r1 = new FARule<>(1, 'a', 1);
@@ -69,5 +73,20 @@ public class NFARuleBookTest {
     assertTrue(rb.nextStates(states, 'b').contains(1));
     assertTrue(rb.nextStates(states, 'b').contains(2));
     assertTrue(rb.nextStates(states, 'b').contains(4));
+  }
+
+  @Test
+  public void testFreeMoves() {
+    NFARuleBook<Integer> fmrb = new NFARuleBook<>();
+    fmrb.addRule(1, null, 2);
+    fmrb.addRule(1, null, 4);
+    fmrb.addRule(2, 'a', 3);
+    fmrb.addRule(3, 'a', 2);
+    fmrb.addRule(4, 'a', 5);
+    fmrb.addRule(5, 'a', 6);
+    fmrb.addRule(6, 'a', 4);
+
+    assertEquals(fmrb.nextStates(Sets.buildSet(1), null), Sets.buildSet(2, 4));
+    assertEquals(fmrb.followFreeMoves(Sets.buildSet(1)), Sets.buildSet(1, 2, 4));
   }
 }

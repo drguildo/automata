@@ -16,14 +16,18 @@ public class NFA<T> {
   }
 
   public boolean accepting() {
-    return !Sets.intersection(currentStates, acceptStates).isEmpty();
+    return !Sets.intersection(currentStates(), acceptStates).isEmpty();
   }
 
   public void readCharacter(Character c) {
-    currentStates = rulebook.nextStates(currentStates, c);
+    currentStates = rulebook.nextStates(currentStates(), c);
   }
 
   public void readString(String s) {
     s.chars().forEach(c -> readCharacter((char) c));
+  }
+
+  private Set<T> currentStates() {
+    return rulebook.followFreeMoves(currentStates);
   }
 }
