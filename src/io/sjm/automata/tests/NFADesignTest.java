@@ -25,7 +25,7 @@ public class NFADesignTest {
     rulebook.addRule(3, 'a', 4);
     rulebook.addRule(3, 'b', 4);
 
-    design = new NFADesign<>(buildSet(1), buildSet(4), rulebook);
+    design = new NFADesign<>(1, buildSet(4), rulebook);
   }
 
   @Test
@@ -46,7 +46,7 @@ public class NFADesignTest {
     fmrb.addRule(5, 'a', 6);
     fmrb.addRule(6, 'a', 4);
 
-    design = new NFADesign<>(buildSet(1), buildSet(2, 4), fmrb);
+    design = new NFADesign<>(1, buildSet(2, 4), fmrb);
     assertTrue(design.accepts("aa"));
     assertTrue(design.accepts("aaa"));
     assertFalse(design.accepts("aaaaa"));
