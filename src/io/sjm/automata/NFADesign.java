@@ -21,6 +21,18 @@ public class NFADesign<T> {
     return nfa.accepting();
   }
 
+  public Set<T> getAcceptStates() {
+    return acceptStates;
+  }
+
+  public NFARuleBook<T> getRulebook() {
+    return rulebook;
+  }
+
+  public T getStartState() {
+    return startState;
+  }
+
   public NFA<T> toNFA() {
     return new NFA<>(buildSet(startState), acceptStates, rulebook);
   }
