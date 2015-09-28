@@ -1,8 +1,8 @@
 package io.sjm.automata;
 
-import java.util.Set;
-
 import io.sjm.stdlib.datastructures.Sets;
+
+import java.util.Set;
 
 public class NFA<T> {
   private Set<T> currentStates;
@@ -27,7 +27,12 @@ public class NFA<T> {
     s.chars().forEach(c -> readCharacter((char) c));
   }
 
-  private Set<T> currentStates() {
+  public Set<T> currentStates() {
     return rulebook.followFreeMoves(currentStates);
+  }
+
+  @Override
+  public String toString() {
+    return currentStates().toString();
   }
 }
