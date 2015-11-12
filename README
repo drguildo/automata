@@ -1,1 +1,2 @@
-Finite state automata are really, really... really simple computers.
+This is a Java implementation of both Deterministic and Nondeterministic Finite Automota as discussed in the book
+Understanding Computation by Tom Stuart.
