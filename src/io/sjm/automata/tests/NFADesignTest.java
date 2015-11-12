@@ -1,14 +1,12 @@
 package io.sjm.automata.tests;
 
-import static io.sjm.stdlib.datastructures.Sets.buildSet;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
+import io.sjm.automata.NFADesign;
+import io.sjm.automata.NFARuleBook;
 import org.junit.Before;
 import org.junit.Test;
 
-import io.sjm.automata.NFADesign;
-import io.sjm.automata.NFARuleBook;
+import static io.sjm.stdlib.datastructures.Sets.buildSet;
+import static org.junit.Assert.*;
 
 public class NFADesignTest {
   private NFARuleBook<Integer> rulebook;
@@ -51,5 +49,21 @@ public class NFADesignTest {
     assertTrue(design.accepts("aaa"));
     assertFalse(design.accepts("aaaaa"));
     assertTrue(design.accepts("aaaaaa"));
+  }
+
+  @Test
+  public void testToNFA() {
+    NFARuleBook<Integer> rb = new NFARuleBook<>();
+    rb.addRule(1, 'a', 1);
+    rb.addRule(1, 'a', 2);
+    rb.addRule(1, null, 2);
+    rb.addRule(2, 'b', 3);
+    rb.addRule(3, 'b', 1);
+    rb.addRule(3, null, 2);
+
+    design = new NFADesign<>(1, buildSet(3), rb);
+    assertEquals(design.toNFA().currentStates(), buildSet(1, 2));
+    assertEquals(design.toNFA(buildSet(2)).currentStates(), buildSet(2));
+    assertEquals(design.toNFA(buildSet(3)).currentStates(), buildSet(2, 3));
   }
 }

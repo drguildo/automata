@@ -11,8 +11,12 @@ public class FARule<T> {
     this.nextState = nextState;
   }
 
+  public Character getCharacter() {
+    return character;
+  }
+
   public boolean appliesTo(T s, Character c) {
-    return state == s && character == c;
+    return state.equals(s) && character == c;
   }
 
   public T follow() {

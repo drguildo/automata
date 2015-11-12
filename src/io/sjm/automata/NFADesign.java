@@ -36,4 +36,8 @@ public class NFADesign<T> {
   public NFA<T> toNFA() {
     return new NFA<>(buildSet(startState), acceptStates, rulebook);
   }
+
+  public NFA<T> toNFA(Set<T> currentStates) {
+    return new NFA<>(currentStates, acceptStates, rulebook);
+  }
 }

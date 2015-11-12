@@ -1,16 +1,28 @@
 package io.sjm.automata;
 
-import java.util.List;
+import java.util.Collection;
 
 public class DFADesign<T> {
   final private T startState;
-  final private List<T> acceptStates;
+  final private Collection<T> acceptStates;
   final private DFARulebook<T> rulebook;
 
-  public DFADesign(T cs, List<T> as, DFARulebook<T> rb) {
+  public DFADesign(T cs, Collection<T> as, DFARulebook<T> rb) {
     startState = cs;
     acceptStates = as;
     rulebook = rb;
+  }
+
+  public T getStartState() {
+    return startState;
+  }
+
+  public Collection<T> getAcceptStates() {
+    return acceptStates;
+  }
+
+  public DFARulebook<T> getRulebook() {
+    return rulebook;
   }
 
   public DFA<T> toDFA() {
