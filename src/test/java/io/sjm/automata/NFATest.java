@@ -1,6 +1,6 @@
 package io.sjm.automata.tests;
 
-import static io.sjm.stdlib.datastructures.Sets.*;
+import static io.sjm.sjmlib.datastructures.Sets.*;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 

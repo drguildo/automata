@@ -1,6 +1,6 @@
 package io.sjm.automata;
 
-import io.sjm.stdlib.datastructures.Sets;
+import io.sjm.sjmlib.datastructures.Sets;
 
 import java.util.Set;
 

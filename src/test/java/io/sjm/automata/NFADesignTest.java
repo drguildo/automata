@@ -5,7 +5,7 @@ import io.sjm.automata.NFARuleBook;
 import org.junit.Before;
 import org.junit.Test;
 
-import static io.sjm.stdlib.datastructures.Sets.buildSet;
+import static io.sjm.sjmlib.datastructures.Sets.buildSet;
 import static org.junit.Assert.*;
 
 public class NFADesignTest {

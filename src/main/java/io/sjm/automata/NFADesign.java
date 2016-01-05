@@ -2,7 +2,7 @@ package io.sjm.automata;
 
 import java.util.Set;
 
-import static io.sjm.stdlib.datastructures.Sets.buildSet;
+import static io.sjm.sjmlib.datastructures.Sets.buildSet;
 
 public class NFADesign<T> {
   final private T startState;

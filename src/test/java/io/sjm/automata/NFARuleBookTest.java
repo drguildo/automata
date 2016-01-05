@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import io.sjm.automata.FARule;
 import io.sjm.automata.NFARuleBook;
-import io.sjm.stdlib.datastructures.Sets;
+import io.sjm.sjmlib.datastructures.Sets;
 
 @SuppressWarnings("static-method")
 public class NFARuleBookTest {

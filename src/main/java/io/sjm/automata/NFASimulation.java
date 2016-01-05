@@ -1,12 +1,12 @@
 package io.sjm.automata;
 
-import io.sjm.stdlib.datastructures.Sets;
+import io.sjm.sjmlib.datastructures.Sets;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static io.sjm.stdlib.datastructures.Sets.buildSet;
+import static io.sjm.sjmlib.datastructures.Sets.buildSet;
 
 public class NFASimulation<T> {
   private NFADesign<T> design;
